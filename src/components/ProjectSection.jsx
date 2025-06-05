@@ -4,6 +4,7 @@ import {
   ExternalLink,
   Github,
   GithubIcon,
+  Images,
 } from "lucide-react";
 import SwiperComponent from "./ui/Swiper";
 import { useState } from "react";
@@ -28,11 +29,12 @@ const projects = [
   {
     id: 2,
     title: "Task-Manager",
-    description: "A task manager app built with MERN stack",
+    description:
+      "Task management system built using Vue.js for the frontend, Node.js for the backend, MySQL as the database, and Docker for containerization.",
     image: "/projects/task-manager.png",
-    tags: ["MERN", "MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
-    demoUrl: "https://task-manager-app.onrender.com/",
-    githubUrl: "https://github.com/sahil-kumar-yadav/Task-Manager",
+    tags: ["Express", "Vue3", "Node.js", "Tailwind CSS", "Mysql", "Docker","JWT"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/Nihafis/task-main",
   },
   {
     id: 3,
@@ -84,7 +86,7 @@ export const ProjectSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               project={project}
@@ -92,7 +94,7 @@ export const ProjectSection = () => {
             >
               <div className="h-48 overflow-hidden">
                 <img
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="hover:cursor-pointer w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   alt={project.title}
                   src={project.image[0]}
                   onClick={() => handleImageClick(project.image)}
@@ -133,6 +135,9 @@ export const ProjectSection = () => {
                     >
                       <Github size={20} />
                     </a>
+                    <button onClick={() => handleImageClick(project.image)}>
+                      <Images className="hover:text-primary" size={20} />
+                    </button>
                   </div>
                 </div>
               </div>
