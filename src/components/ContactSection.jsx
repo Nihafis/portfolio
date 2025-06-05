@@ -8,10 +8,10 @@ import {
   Send,
 } from "lucide-react";
 import { cn } from "../lib/utils";
-import { useToast } from "../hooks/useToast";
+// import { useToast } from "../hooks/useToast";
 
 export const ContactSection = () => {
-  const { showToast } = useToast();
+  // const { showToast } = useToast();
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();

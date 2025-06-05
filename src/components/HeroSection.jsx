@@ -30,14 +30,23 @@ export const HeroSection = () => {
             I'm a full stack developer with a passion for building web
             applications with PHP and React.
           </p>
-
-          <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a
-              href="#projects"
-              className="px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)] hover:scale-105 active:scale-95"
-            >
-              View My Work
-            </a>
+          <div className="flex justify-center gap-4">
+            <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+              <a
+                href="#experiance"
+                className="px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)] hover:scale-105 active:scale-95"
+              >
+                View My Experience
+              </a>
+            </div>
+            <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+              <a
+                href="#projects"
+                className="px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)] hover:scale-105 active:scale-95"
+              >
+                View My Projects
+              </a>
+            </div>
           </div>
         </div>
       </div>

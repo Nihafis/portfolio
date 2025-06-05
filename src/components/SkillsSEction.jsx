@@ -4,17 +4,48 @@ import { cn } from "../lib/utils";
 const skills = [
   {
     name: "HTML",
-    level: 90,
+    level: 100,
     category: "Frontend",
   },
   {
     name: "CSS",
-    level: 80,
+    level: 100,
     category: "frontend",
   },
   {
     name: "JavaScript",
-    level: 70,
+    level: 100,
+    category: "frontend",
+  },
+  {
+    name: "PHP",
+    level: 100,
+    category: "backend",
+  },
+  {
+    name: "CodeIgniter",
+    level: 80,
+    category: "frontend",
+  },
+  
+  {
+    name: "Node.js",
+    level: 100,
+    category: "backend",
+  },
+  {
+    name: "Express.js",
+    level: 100,
+    category: "backend",
+  },
+  {
+    name: "Next.js",
+    level: 50,
+    category: "frontend",
+  },
+  {
+    name: "Vue.js",
+    level: 50,
     category: "frontend",
   },
   {
@@ -23,58 +54,53 @@ const skills = [
     category: "frontend",
   },
   {
-    name: "CodeIgniter",
-    level: 50,
-    category: "frontend",
-  },
-  {
-    name: "PHP",
-    level: 50,
-    category: "backend",
-  },
-  {
-    name: "Node.js",
-    level: 40,
-    category: "backend",
-  },
-  {
     name: "MySQL",
-    level: 30,
+    level: 100,
     category: "database",
   },
   {
     name: "MongoDB",
-    level: 20,
+    level: 50,
     category: "database",
   },
   {
     name: "PostgreSQL",
-    level: 10,
+    level: 50,
     category: "database",
   },
   {
     name: "MSSQL",
-    level: 10,
+    level: 50,
     category: "database",
   },
   {
     name: "Redis",
-    level: 10,
+    level: 100,
     category: "database",
   },
   {
     name: "Docker",
-    level: 10,
+    level: 20,
     category: "tools",
   },
   {
     name: "Git",
-    level: 10,
+    level: 50,
     category: "tools",
   },
   {
     name: "CursorAI",
-    level: 10,
+    level: 100,
+    category: "tools",
+  },
+  {
+    name: "Postman",
+    level: 100,
+    category: "tools",
+  },
+  {
+    name: "Linux",
+    level: 100,
     category: "tools",
   },
 ];
@@ -107,11 +133,11 @@ export const SkillsSection = () => {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6 animate-fade-in">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="bg-card p-6 rounded-lg shadow-xs card-hover "
             >
               <div className="text-left mb-4">
                 <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
