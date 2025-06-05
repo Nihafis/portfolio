@@ -13,10 +13,19 @@ import { useToast } from "../hooks/useToast";
 export const ContactSection = () => {
   const { showToast } = useToast();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    showToast("Success!", "Your message has been sent successfully.");
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.target);
+
+  //   // Send the form data to FormSubmit
+  //   await fetch("https://formsubmit.co/nihafis3603@gmail.com", {
+  //     method: "POST",
+  //     body: formData,
+  //   });
+
+  //   showToast("Success!", "Your message has been sent successfully.");
+  //   e.target.reset(); // Optionally reset the form
+  // };
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -32,7 +41,7 @@ export const ContactSection = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="spac-y-8 p-6 ">
-            <h3 className="text-2xl font-semibold mb-6">Contact Inforamtion</h3>
+            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             <div className="space-y-6 justify-center">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
@@ -78,14 +87,35 @@ export const ContactSection = () => {
             <div className="pt-8 ">
               <h4 className=" font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/nihafis-hasamoh-1aab38230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                >
                   <Linkedin />
                 </a>
-                <a href="" target="_blank">
+                <a href="https://www.instagram.com/fisguxsoe/" target="_blank">
                   <Instagram />
                 </a>
-                <a href="" target="_blank">
+                <a
+                  href="https://www.facebook.com/fis.nihafis.2025"
+                  target="_blank"
+                >
                   <Facebook />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@fisguxsoe?is_from_webapp=1&sender_device=pc"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    fill={"currentColor"}
+                    viewBox="0 0 24 24"
+                  >
+                    {/* Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free */}
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"></path>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -93,7 +123,12 @@ export const ContactSection = () => {
 
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              // onSubmit={handleSubmit}
+              action="https://formsubmit.co/nihafis3603@gmail.com"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="">
                 <label
                   htmlFor="name"
@@ -101,6 +136,7 @@ export const ContactSection = () => {
                 >
                   Your Name
                 </label>
+                <input type="hidden" name="_captcha" value="false" />
                 <input
                   type="text"
                   id="name"

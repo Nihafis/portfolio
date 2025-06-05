@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-
+import { AvatarComponent } from "./ui/Avatar";
 export const HeroSection = () => {
   return (
     <section
@@ -8,6 +8,9 @@ export const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
+          <div className="flex justify-center">
+            <AvatarComponent />
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
@@ -40,7 +43,9 @@ export const HeroSection = () => {
       </div>
 
       <div className="absolute bottom-8 left-1/2 transfrom -translate-x-1/2 flex flex-col items-center animate-bounce">
-        <span className="text-sm text-muted-foreground mb-2">Scroll</span>
+        <span className="text-sm font-semibold text-muted-foreground mb-2">
+          Scroll
+        </span>
         <ArrowDown className="w-5 h-5 text-primary" />
       </div>
     </section>
