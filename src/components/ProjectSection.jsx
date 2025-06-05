@@ -31,8 +31,18 @@ const projects = [
     title: "Task-Manager",
     description:
       "Task management system built using Vue.js for the frontend, Node.js for the backend, MySQL as the database, and Docker for containerization.",
-    image: "/projects/task-manager.png",
-    tags: ["Express", "Vue3", "Node.js", "Tailwind CSS", "Mysql", "Docker","JWT"],
+    image: ["/projects/task-manager.png"],
+    tags: [
+      "Express",
+      "Vue3",
+      "Node.js",
+      "Quasar",
+      "Pinia",
+      "Tailwind CSS",
+      "Mysql",
+      "Docker",
+      "JWT",
+    ],
     demoUrl: "#",
     githubUrl: "https://github.com/Nihafis/task-main",
   },
@@ -59,8 +69,12 @@ export const ProjectSection = () => {
   const [imageSlides, setImageSlides] = useState([]);
 
   const handleImageClick = (image) => {
-    setShowSwiper(true);
-    setImageSlides(image);
+    console.log(image);
+    if (image.length > 1) {
+      setShowSwiper(true);
+      setImageSlides(image);
+    }
+    return;
   };
   return (
     <section id="projects" className="relative px-4 py-24 ">
