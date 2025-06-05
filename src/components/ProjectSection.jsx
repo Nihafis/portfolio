@@ -27,7 +27,7 @@ const projects = [
     tags: [
       "MERN",
       "MongoDB",
-      "Express",
+      "Express.js",
       "React",
       "Node.js",
       "Firebase",
