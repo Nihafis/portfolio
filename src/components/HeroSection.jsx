@@ -28,9 +28,9 @@ export const HeroSection = () => {
                         max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3"
           >
             I'm a full stack developer with a passion for building web
-            applications with PHP and React.
+            applications 
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <div className="pt-4 opacity-0 animate-fade-in-delay-4">
               <a
                 href="#experiance"

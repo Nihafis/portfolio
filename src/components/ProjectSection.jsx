@@ -1,11 +1,18 @@
-import { ArrowRight, ExternalLink, Github, GithubIcon } from "lucide-react";
-
+import {
+  ArrowRight,
+  CircleX,
+  ExternalLink,
+  Github,
+  GithubIcon,
+} from "lucide-react";
+import SwiperComponent from "./ui/Swiper";
+import { useState } from "react";
 const projects = [
   {
     id: 1,
     title: "Mern-Blog",
     description: "A blog website built with MERN stack",
-    image: "/projects/mern-post.png",
+    image: ["/projects/mern-post.png", "/projects/mern-dash.png"],
     tags: [
       "MERN",
       "MongoDB",
@@ -15,8 +22,8 @@ const projects = [
       "Firebase",
       "Tailwind CSS",
     ],
-    demoUrl: "https://mern-blog-app.onrender.com/",
-    githubUrl: "https://github.com/sahil-kumar-yadav/Mern-Blog",
+    demoUrl: "https://mern-blog-pqp1.onrender.com/",
+    githubUrl: "https://github.com/Nihafis/mern-blog",
   },
   {
     id: 2,
@@ -29,16 +36,44 @@ const projects = [
   },
   {
     id: 3,
-    title: "E-Commerce",
-    description: "A e-commerce website built with MERN stack",
-    image: "/projects/e-commerce.png",
-    tags: ["MERN", "MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
+    title: "Natours",
+    description: "A tour booking website built with Node.js and MongoDB",
+    image: [
+      "/projects/natour/natour.png",
+      "/projects/natour/natour2.png",
+      "/projects/natour/natour3.png",
+      "/projects/natour/natour4.png",
+      "/projects/natour/natour5.png",
+    ],
+    tags: ["Node.js", "MongoDB", "Express", "Stripe", "Nodemailer"],
+    demoUrl: "https://natours-nodejs-z5a2.onrender.com/",
+    githubUrl: "https://github.com/Nihafis/Natours-nodejs",
   },
 ];
 
 export const ProjectSection = () => {
+  // const [activeImage, setActiveImage] = useState(projects[0].image[0]);
+  const [showSwiper, setShowSwiper] = useState(false);
+  const [imageSlides, setImageSlides] = useState([]);
+
+  const handleImageClick = (image) => {
+    setShowSwiper(true);
+    setImageSlides(image);
+  };
   return (
     <section id="projects" className="relative px-4 py-24 ">
+      {showSwiper && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+          <button
+            onClick={() => setShowSwiper(false)}
+            className="absolute top-20 right-4 z-60"
+          >
+            {" "}
+            <CircleX size={20} />{" "}
+          </button>
+          <SwiperComponent images={imageSlides} />
+        </div>
+      )}
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           {" "}
@@ -59,14 +94,15 @@ export const ProjectSection = () => {
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   alt={project.title}
-                  src={project.image}
+                  src={project.image[0]}
+                  onClick={() => handleImageClick(project.image)}
                 />
               </div>
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
+                  {project.tags.map((tag, tagIndex) => (
                     <span
-                      key={key}
+                      key={`${project.id}-${tagIndex}`}
                       className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full"
                     >
                       {tag}

@@ -12,16 +12,17 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Develeper & Tech Creator
+              Passionate Full Stack Developer & Web Developer
             </h3>
             <p className="text-muted-foreground">
-              I'm a tech creator with a passion for building web applications
-              and tools that help people live better lives.
+              As a Junior Developer with approximately 2 years of experience in
+              website development and data management, in accordance with
+              policies and user requirements,
             </p>
 
             <p className="text-muted-foreground">
-              I'm a tech creator with a passion for building web applications
-              and tools that help people live better lives.
+              I also possess strong communication skills, the ability to work
+              collaboratively with teams, and problem-solving abilities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a
@@ -49,8 +50,8 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="text-lg font-semibold">Web Development</h4>
                   <p className="text-muted-foreground">
-                    I'm a tech creator with a passion for building web
-                    applications and tools that help people live better lives.
+                    I'm web developer with a passion for building web
+                    applications
                   </p>
                 </div>
               </div>
@@ -75,10 +76,9 @@ export const AboutSection = () => {
                   <Briefcase className="w-6 h-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">Tech Creator</h4>
+                  <h4 className="text-lg font-semibold">Data Management</h4>
                   <p className="text-muted-foreground">
-                    I'm a tech creator with a passion for building web
-                    applications and tools that help people live better lives.
+                    Manage data to improve the performance of the website.
                   </p>
                 </div>
               </div>
