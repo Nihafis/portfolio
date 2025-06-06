@@ -15,7 +15,7 @@ export const ExperianceSection = () => {
                 {" "}
                 Junior Full Stack Web Developer{" "}
               </h3>
-              <p className="font-semibold mb-6">
+              <p className="font-semibold mb-6 text-wrap">
                 WinWin Interactive Co., Ltd.{" "}
                 <span className="text-primary"> Dec 2022 - present</span>
               </p>
@@ -50,7 +50,7 @@ export const ExperianceSection = () => {
               <h3 className="text-2xl font-semibold mb-6">
                 Internships Web Developer
               </h3>
-              <p className="font-semibold mb-6">
+              <p className="font-semibold mb-6 text-wrap">
                 WinWin Interactive Co., Ltd.{" "}
                 <span className="text-primary"> Sep 2022 - Nov 2022</span>
               </p>
