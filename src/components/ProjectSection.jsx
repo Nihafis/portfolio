@@ -11,8 +11,8 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "Mern-Blog",
-    description: "A blog website built with MERN stack",
+    title: "FISGUXSOE-BLOG",
+    description: "a beautiful blog website built with MERN stack",
     image: [
       "/projects/mernblog/mern-login.png",
       "/projects/mernblog/mern-post.png",
@@ -41,15 +41,22 @@ const projects = [
     title: "Task-Manager",
     description:
       "Task management system built using Vue.js for the frontend, Node.js for the backend, MySQL as the database, and Docker for containerization.",
-    image: "/projects/task-manager.png",
-    tags: ["Express", "Vue3", "Node.js", "Tailwind CSS", "Mysql", "Docker","JWT"],
-    demoUrl: "#",
+    image: [
+      "/projects/task/task-login.png",
+      "/projects/task/task-main.png",
+      "/projects/task/task-create.png",
+      "/projects/task/task-create2.png",
+      "/projects/task/task-edit.png",
+      "/projects/task/task-edited.png",
+    ],
+    tags: ["Express.js", "Node.js", "Tailwind CSS", "Mysql", "Docker", "JWT", "Vue3", "Quasar", "Pinia", "Firebase"],
+    demoUrl: "",
     githubUrl: "https://github.com/Nihafis/task-main",
   },
   {
     id: 3,
     title: "Natours",
-    description: "A tour booking website built with Node.js and MongoDB",
+    description: "A tour booking website built with Node.js and MongoDB with a modern design",
     image: [
       "/projects/natour/natour.png",
       "/projects/natour/natour2.png",
@@ -57,7 +64,7 @@ const projects = [
       "/projects/natour/natour4.png",
       "/projects/natour/natour5.png",
     ],
-    tags: ["Node.js", "MongoDB", "Express", "Stripe", "Nodemailer"],
+    tags: ["Node.js", "MongoDB", "Express.js", "Stripe", "Nodemailer"],
     demoUrl: "https://natours-nodejs-z5a2.onrender.com/",
     githubUrl: "https://github.com/Nihafis/Natours-nodejs",
   },
@@ -114,7 +121,7 @@ export const ProjectSection = () => {
                   onClick={() => handleImageClick(project.image)}
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 ">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <span
@@ -132,6 +139,7 @@ export const ProjectSection = () => {
                 </p>
                 <div className="flex justify-between items-center ">
                   <div className="flex space-x-3">
+                    {project.demoUrl && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
@@ -141,6 +149,7 @@ export const ProjectSection = () => {
                       {" "}
                       <ExternalLink size={20} />
                     </a>
+                    )}
                     <a
                       href={project.githubUrl}
                       target="_blank"

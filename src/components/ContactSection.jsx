@@ -2,30 +2,36 @@ import {
   Facebook,
   Instagram,
   Linkedin,
+  Loader2,
   Mail,
   MapPin,
   Phone,
   Send,
 } from "lucide-react";
 import { cn } from "../lib/utils";
-// import { useToast } from "../hooks/useToast";
+import { useToast } from "../hooks/useToast";
+// import { useState } from "react";
 
 export const ContactSection = () => {
-  // const { showToast } = useToast();
+  const { showToast } = useToast();
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.target);
+  // const [isSubmitting, setIsSubmitting] = useState(false);
 
-  //   // Send the form data to FormSubmit
-  //   await fetch("https://formsubmit.co/nihafis3603@gmail.com", {
-  //     method: "POST",
-  //     body: formData,
-  //   });
+  const handleSubmit = async (e) => {
+      // e.preventDefault();
+    // setIsSubmitting(true);
+    //   const formData = new FormData(e.target);
 
-  //   showToast("Success!", "Your message has been sent successfully.");
-  //   e.target.reset(); // Optionally reset the form
-  // };
+    //   // Send the form data to FormSubmit
+    //   await fetch("https://formsubmit.co/nihafis3603@gmail.com", {
+    //     method: "POST",
+    //     body: formData,
+    //   });
+
+    showToast("Success!", "Your message has been sent successfully.");
+    e.target.reset(); // Optionally reset the form
+    // setIsSubmitting(false);
+  };
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -128,6 +134,7 @@ export const ContactSection = () => {
               action="https://formsubmit.co/nihafis3603@gmail.com"
               method="POST"
               className="space-y-6"
+              onSubmit={handleSubmit}
             >
               <div className="">
                 <label
@@ -155,7 +162,7 @@ export const ContactSection = () => {
                   Your Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   name="email"
                   placeholder="john@gmail.com"
@@ -180,15 +187,28 @@ export const ContactSection = () => {
               rounded-md p-2 focus:ring-2 focus:ring-primary resize-none"
                   required
                 />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="http://localhost:5173/"
+                />
               </div>
               <button
                 type="submit"
                 className={cn(
                   "px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)] hover:scale-105 active:scale-95 w-fit  flex items-center mx-auto gap-2 w-full flex items-center justify-center gap-2"
                 )}
+                // disabled={isSubmitting}
               >
-                <Send size={16} className="w-6 h-6 mr-2" />
-                Send Message
+                {/* {isSubmitting ? ( */}
+                  {/* <Loader2 className="w-6 h-6 mr-2 animate-spin" /> */}
+                {/* ) : ( */}
+                  <>
+                    <Send size={16} className="w-6 h-6 mr-2" />
+                    {/* {isSubmitting ? "Sending..." : "Send Message"} */}
+                    Send Message
+                  </>
+                {/* )} */}
               </button>
             </form>
           </div>

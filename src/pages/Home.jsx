@@ -6,6 +6,7 @@ import { StarBackground } from "../components/StarBackground";
 import { ProjectSection } from "../components/ProjectSection";
 import { ContactSection } from "../components/ContactSection";
 import { ExperianceSection } from "../components/ExperianceSection";
+import { Footer } from "../components/Footer";
 export const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -24,6 +25,7 @@ export const Home = () => {
         <ContactSection />
     </main>
       {/* footer */}
+      <Footer />
     </div>
   );
 };
