@@ -18,7 +18,7 @@ export const ContactSection = () => {
   // const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
-      // e.preventDefault();
+    // e.preventDefault();
     // setIsSubmitting(true);
     //   const formData = new FormData(e.target);
 
@@ -143,7 +143,7 @@ export const ContactSection = () => {
                 >
                   Your Name
                 </label>
-                <input type="hidden" name="_captcha" value="false" />
+
                 <input
                   type="text"
                   id="name"
@@ -187,10 +187,11 @@ export const ContactSection = () => {
               rounded-md p-2 focus:ring-2 focus:ring-primary resize-none"
                   required
                 />
+                <input type="hidden" name="_captcha" value="false" />
                 <input
                   type="hidden"
                   name="_next"
-                  value="http://localhost:5173/"
+                  value="https://portfolio-1-u20p.onrender.com"
                 />
               </div>
               <button
@@ -201,13 +202,13 @@ export const ContactSection = () => {
                 // disabled={isSubmitting}
               >
                 {/* {isSubmitting ? ( */}
-                  {/* <Loader2 className="w-6 h-6 mr-2 animate-spin" /> */}
+                {/* <Loader2 className="w-6 h-6 mr-2 animate-spin" /> */}
                 {/* ) : ( */}
-                  <>
-                    <Send size={16} className="w-6 h-6 mr-2" />
-                    {/* {isSubmitting ? "Sending..." : "Send Message"} */}
-                    Send Message
-                  </>
+                <>
+                  <Send size={16} className="w-6 h-6 mr-2" />
+                  {/* {isSubmitting ? "Sending..." : "Send Message"} */}
+                  Send Message
+                </>
                 {/* )} */}
               </button>
             </form>

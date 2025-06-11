@@ -38,7 +38,7 @@ export const ExperianceSection = () => {
               providers, Leaflet, Clerk, and external APIs.
               <br />- Designed and optimized scalable{" "}
               <span className="text-primary">MySQL </span> database structures
-              for new systems and features. MySQL
+              for new systems and features. 
               <br />- Created{" "}
               <span className="text-primary"> responsive UI</span> using
               Bootstrap and Tailwind CSS (Flowbite, Shadcn) for enhanced user
