@@ -10,28 +10,47 @@ import {
 } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/useToast";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 // import { useState } from "react";
 
 export const ContactSection = () => {
+  const form = useRef();
   const { showToast } = useToast();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm("service_20sq9u1", "template_udfii56", form.current, {
+        publicKey: "epuLB95HFQ7vEvoKL",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          showToast("Success!", "Your message has been sent successfully.");
+          form.current.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
 
   // const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e) => {
-    // e.preventDefault();
-    // setIsSubmitting(true);
-    //   const formData = new FormData(e.target);
-
-    //   // Send the form data to FormSubmit
-    //   await fetch("https://formsubmit.co/nihafis3603@gmail.com", {
-    //     method: "POST",
-    //     body: formData,
-    //   });
-
-    showToast("Success!", "Your message has been sent successfully.");
-    e.target.reset(); // Optionally reset the form
-    // setIsSubmitting(false);
-  };
+  // const handleSubmit = async (e) => {
+  //   // e.preventDefault();
+  //   // setIsSubmitting(true);
+  //   //   const formData = new FormData(e.target);
+  //   //   // Send the form data to FormSubmit
+  //   //   await fetch("https://formsubmit.co/nihafis3603@gmail.com", {
+  //   //     method: "POST",
+  //   //     body: formData,
+  //   //   });
+  //   // showToast("Success!", "Your message has been sent successfully.");
+  //   // e.target.reset(); // Optionally reset the form
+  //   // setIsSubmitting(false);
+  // };
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -129,13 +148,7 @@ export const ContactSection = () => {
 
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
-            <form
-              // onSubmit={handleSubmit}
-              action="https://formsubmit.co/nihafis3603@gmail.com"
-              method="POST"
-              className="space-y-6"
-              onSubmit={handleSubmit}
-            >
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="">
                 <label
                   htmlFor="name"
@@ -143,7 +156,6 @@ export const ContactSection = () => {
                 >
                   Your Name
                 </label>
-
                 <input
                   type="text"
                   id="name"
@@ -156,7 +168,7 @@ export const ContactSection = () => {
               </div>
               <div className="">
                 <label
-                  htmlFor="name"
+                  htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Your Email
@@ -173,13 +185,12 @@ export const ContactSection = () => {
               </div>
               <div className="">
                 <label
-                  htmlFor="name"
+                  htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
                   Your Message
                 </label>
                 <textarea
-                  type="text"
                   id="message"
                   name="message"
                   placeholder="Hello,I'd like to talk about..."
@@ -187,29 +198,15 @@ export const ContactSection = () => {
               rounded-md p-2 focus:ring-2 focus:ring-primary resize-none"
                   required
                 />
-                <input type="hidden" name="_captcha" value="false" />
-                <input
-                  type="hidden"
-                  name="_next"
-                  value="https://portfolio-1-u20p.onrender.com"
-                />
               </div>
               <button
                 type="submit"
                 className={cn(
                   "px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)] hover:scale-105 active:scale-95 w-fit  flex items-center mx-auto gap-2 w-full flex items-center justify-center gap-2"
                 )}
-                // disabled={isSubmitting}
               >
-                {/* {isSubmitting ? ( */}
-                {/* <Loader2 className="w-6 h-6 mr-2 animate-spin" /> */}
-                {/* ) : ( */}
-                <>
-                  <Send size={16} className="w-6 h-6 mr-2" />
-                  {/* {isSubmitting ? "Sending..." : "Send Message"} */}
-                  Send Message
-                </>
-                {/* )} */}
+                <Send size={16} className="w-6 h-6 mr-2" />
+                Send Message
               </button>
             </form>
           </div>
