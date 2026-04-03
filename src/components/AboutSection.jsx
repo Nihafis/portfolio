@@ -16,14 +16,13 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              I’m a Software Developer specializing in building scalable and secure backend systems
-              using modern technologies and microservices architecture. I focus on designing reliable
-              APIs, optimizing performance, and implementing robust system security.
+              I’m a Software Developer specializing in scalable and secure backend systems,
+              focusing on reliable APIs, performance optimization, and system security.
             </p>
 
             <p className="text-muted-foreground">
-              With a background in full-stack development, I collaborate effectively with teams to
-              deliver high-quality solutions and solve complex problems in real-world applications.
+              With a background in full-stack development, I deliver high-quality solutions
+              and solve complex problems in real-world applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a

@@ -69,7 +69,7 @@ const skills = [
   },
   {
     name: "MongoDB",
-    level: 50,
+    level: 100,
     category: "database",
   },
   {
@@ -89,12 +89,12 @@ const skills = [
   },
   {
     name: "Docker",
-    level: 20,
+    level: 50,
     category: "tools",
   },
   {
     name: "Git",
-    level: 50,
+    level: 100,
     category: "tools",
   },
   {
@@ -112,6 +112,24 @@ const skills = [
     level: 100,
     category: "tools",
   },
+  {
+    name: "Kafka",
+    level: 100,
+    category: "tools",
+  },
+  {
+    name: "NesgtJS",
+    level: 100,
+    category: "backend",
+  },
+  {
+    name: "Socket.IO",
+    level: 100,
+    category: "backend",
+  },
+  {
+    name: ""
+  }
 ];
 
 const categories = ["all", "frontend", "backend", "database", "tools"];

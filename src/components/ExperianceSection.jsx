@@ -25,40 +25,39 @@ export const ExperianceSection = () => {
                 Build and maintain scalable, secure <span className="text-primary">backend services</span> using
                 <span className="text-primary"> NestJS, TypeScript</span>, and microservices architecture.
               </li>
-
+              <li>
+                Implemented secure virtual bank registration and authentication using <span className="text-primary">cryptographic verification</span> (App Attest, Huawei Integrity, and Android Attestation).  </li>
               <li>
                 Develop event-driven systems with <span className="text-primary">Kafka</span> for distributed communication.
               </li>
-
               <li>
-                Implement <span className="text-primary">Redis</span> for caching, rate limiting, and token/device blacklisting,
+                Implemented <span className="text-primary">Redis</span> for caching, rate limiting, and token/device blacklisting,
                 with <span className="text-primary">Pub/Sub</span> for real-time event handling.
               </li>
-
               <li>
-                Build real-time features using <span className="text-primary">WebSocket (Socket.IO)</span>.
+                Built real-time features using <span className="text-primary">WebSocket (Socket.IO)</span>.
               </li>
 
               <li>
-                Design and optimize <span className="text-primary">MongoDB</span> schemas and aggregation pipelines.
+                Designed and optimized <span className="text-primary">MongoDB</span> schemas and aggregation pipelines.
               </li>
 
               <li>
-                Containerize applications with <span className="text-primary">Docker</span> and manage deployments via
+                Containerized applications with <span className="text-primary">Docker</span> and managed deployments via
                 <span className="text-primary"> GitHub Actions</span> and <span className="text-primary">ArgoCD</span> (GitOps).
               </li>
 
               <li>
-                Manage secrets securely using <span className="text-primary">Azure Key Vault</span>.
+                Managed secrets securely using <span className="text-primary">Azure Key Vault</span>.
               </li>
 
               <li>
-                Implement centralized logging and monitoring with the
+                Implemented <span className="text-primary">unit testing</span>, centralized logging, and monitoring with the
                 <span className="text-primary"> Elastic Stack</span> (Elasticsearch, Kibana).
               </li>
 
               <li>
-                Design and develop <span className="text-primary">REST APIs</span> following clean architecture and best practices.
+                Designed and developed <span className="text-primary">REST APIs</span> following clean architecture and best practices.
               </li>
             </ul>
           </div>
